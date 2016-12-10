@@ -1,5 +1,6 @@
-# Pixiv_Crawler
+﻿# Pixiv_Crawler
 ##A crawler for downloading pics on pixiv ranklist
+##一个下载pixiv上排行榜图片的爬虫
 <br>
 
 ###Update Log
