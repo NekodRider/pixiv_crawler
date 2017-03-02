@@ -22,7 +22,7 @@ headers = {
 class mzitu():
 
     def all_url(self, url):
-        html = self.login('driver2223@gmail.com','yyw19980424',url)
+        html = self.login('account','password',url)
         all_rank_item=BeautifulSoup(html.text, 'html.parser').find_all('div', class_='ranking-item')
         progress=0
         for rank_item in all_rank_item:
@@ -91,10 +91,10 @@ class mzitu():
 
     def mkdir(self, path):
         path = path.strip()
-        isExists = os.path.exists(os.path.join("k:\mzitu", path))
+        isExists = os.path.exists(os.path.join("path", path))
         if not isExists:
             print(u'Make a directory called: "', path,u'"')
-            os.makedirs(os.path.join("k:\mzitu", path))
+            os.makedirs(os.path.join("path", path))
             return True
         else:
             print(u'The directory called "', path, u'" is already existed!')
@@ -102,8 +102,8 @@ class mzitu():
 
     def request(self, url):
         postdata1 = {
-            'pixiv_id': 'driver2223@gmail.com',
-            'password': 'yyw19980424',
+            'pixiv_id': 'pixiv_id',
+            'password': 'password',
             'captcha': '',
             'g_recaptcha_response': '',
             'post_key': str(postkey),
@@ -123,8 +123,8 @@ class mzitu():
         global postkey
         postkey=str(soup.find_all(attrs={'name':'post_key'})[0]).split("\"")[5]
         postdata = {
-            'pixiv_id': 'driver2223@gmail.com',
-            'password': 'yyw19980424',
+            'pixiv_id': 'pixiv_id',
+            'password': 'password',
             'captcha': '',
             'g_recaptcha_response': '',
             'post_key': str(postkey),
@@ -143,7 +143,6 @@ class mzitu():
 Mzitu = mzitu()
 global s
 s=requests.Session()
-#Mzitu.login('driver2223@gmail.com','yyw19980424')
 Mzitu.all_url('http://www.pixiv.net/ranking_area.php?type=detail&no=6')
 
 url='http://www.pixiv.net/ranking_area.php?type=detail&no=6'
