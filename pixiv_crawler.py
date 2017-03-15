@@ -19,7 +19,7 @@ headers = {
     'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36',
     'X-Requested-With':'XMLHttpRequest'
 }
-class mzitu():
+class pixiv():
 
     def all_url(self, url):
         html = self.login('account','password',url)
@@ -140,9 +140,9 @@ class mzitu():
             print(res.status_code)
             print('Failed to login!')
 
-Mzitu = mzitu()
+Pixiv = pixiv()
 global s
 s=requests.Session()
-Mzitu.all_url('http://www.pixiv.net/ranking_area.php?type=detail&no=6')
+Pixiv.all_url('http://www.pixiv.net/ranking_area.php?type=detail&no=6')
 
 url='http://www.pixiv.net/ranking_area.php?type=detail&no=6'
